@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCP Loading Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #cfd8dc;
+            font-size: 14px;
+            letter-spacing: 1px;
+            z-index: 2;
+            text-shadow: 0 0 10px black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ GARRY'S MOD KOMPATIBEL -->
+    <video autoplay muted loop playsinline>
+        <source src="scp_loading.webm" type="video/webm">
+    </video>
+
+    <div class="overlay">
+        SCP FOUNDATION · SECURE · CONTAIN · PROTECT
+    </div>
+
+</body>
+</html>
