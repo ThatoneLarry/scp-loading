@@ -1,59 +1,55 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SCP Foundation – Loading</title>
+    <meta charset="UTF-8">
+    <title>SCP Loading Screen</title>
 
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    overflow: hidden;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    background: black;
-}
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-.overlay {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: #00b4ff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    letter-spacing: 1px;
-    opacity: 0.85;
-    text-shadow: 0 0 10px rgba(0,180,255,0.6);
-}
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
 
-.sub {
-    font-size: 14px;
-    color: #b0c8d8;
-    margin-top: 6px;
-}
-</style>
+        .overlay {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #cfd8dc;
+            font-size: 14px;
+            letter-spacing: 1px;
+            z-index: 2;
+            text-shadow: 0 0 10px black;
+        }
+    </style>
 </head>
-
 <body>
 
-<video autoplay loop muted playsinline>
-    <source src="https://thatonelarry.github.io/scp_loading/scp_logo_2.mp4" type="video/mp4">
-</video>
+    <!-- 🔊 muted ist WICHTIG für Autoplay in GMod -->
+    <video autoplay muted loop playsinline>
+        <source src="scp_logo.mp4" type="video/mp4">
+    </video>
 
-<div class="overlay">
-    SCP FOUNDATION<br>
-    <div class="sub">Zugriff auf Standortdaten…</div>
-</div>
+    <div class="overlay">
+        SCP FOUNDATION · SECURE · CONTAIN · PROTECT
+    </div>
 
 </body>
 </html>
