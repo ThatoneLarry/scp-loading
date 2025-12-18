@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCP Loading Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #cfd8dc;
+            font-size: 14px;
+            letter-spacing: 1px;
+            z-index: 2;
+            text-shadow: 0 0 10px black;
+        }
+
+        .mute-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            color: #00e5ff;
+            padding: 8px 14px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mute-btn:hover {
+            background: rgba(0, 255, 255, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🎥 Hintergrundvideo -->
+    <video autoplay muted loop playsinline>
+        <source src="scp_loading.webm" type="video/webm">
+    </video>
+
+    <!-- 🎵 Musik -->
+    <audio id="bgm" autoplay loop>
+        <source src="cowboy.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- 🔊 Mute Button -->
+    <button class="mute-btn" onclick="toggleMusic()">🔊 MUSIK AN</button>
+
+    <div class="overlay">
+        SCP FOUNDATION · SECURE · CONTAIN · PROTECT
+    </div>
+
+    <script>
+        const music = document.getElementById("bgm");
+        const btn = document.querySelector(".mute-btn");
+
+        music.volume = 0.4;
+
+        function toggleMusic() {
+            music.muted = !music.muted;
+            btn.textContent = music.muted ? "🔇 MUSIK AUS" : "🔊 MUSIK AN";
+        }
+    </script>
+
+</body>
+</html>
